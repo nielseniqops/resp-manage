@@ -1,0 +1,64 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["referentialIntegrity"]
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+  referentialIntegrity = "prisma"
+}
+
+model User {
+  id Int @id @default(autoincrement())
+  email String @unique
+  password String
+  pwChange Boolean @default(false)
+  phone String? @unique
+  name String
+  permission String
+  project Project[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Project{
+  id Int @id @default(autoincrement())
+  name String
+  opNumber String?
+  wbsNumber String?
+  group String?
+  status String
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId Int
+  payType String
+  respondent Respondent[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt 
+  @@index([userId])
+}
+
+model Respondent{
+  id Int @id @default(autoincrement())
+  name String
+  otherProjectAgree Boolean
+  phone String
+  birthday String
+  residentNumber String
+  todayPay Boolean
+  bankName String?
+  bankNumber String?
+  address String
+  addressDetail String
+  zonecode String
+  sign String @db.LongText
+  pay String
+  project Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  projectId Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt 
+  @@index([projectId])
+}
