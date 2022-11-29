@@ -20,7 +20,7 @@ const AddProject: NextPage = ({}) => {
   const { register, handleSubmit, setValue, setError, formState: { errors }, watch} = useForm<Project>();
   const [registerProject, {loading, data, error}] = useMutation<RegisterProjectMutation>(`/api/project`);
   const router = useRouter();
-  const onValid = async ({name, opNumber, wbsNumber, group, payType}:Project) => {
+  const onValid = async ({name, title, opNumber, wbsNumber, group, payType}:Project) => {
     if(loading) return;
     let errFlag = false;
     
@@ -35,7 +35,7 @@ const AddProject: NextPage = ({}) => {
     }
 
     if( errFlag ) return;
-    registerProject({name, opNumber, wbsNumber, group, payType});
+    registerProject({name, title, opNumber, wbsNumber, group, payType});
   }
 
   useEffect( ()=>{
@@ -51,6 +51,8 @@ const AddProject: NextPage = ({}) => {
           <form onSubmit={handleSubmit(onValid)}>
             <InputText name="name" type="text" label="Project name" register={register("name")} onSetValue={setValue}/>
             {errors.name ? <Errorset text={errors.name.message}/> : null}
+            <InputText name="title" type="text" label="Show title" register={register("title")} onSetValue={setValue} required={false} optional={true}/>
+            {errors.title ? <Errorset text={errors.title.message}/> : null}
             <InputText name="opNumber" type="text" label="OP-Number" register={register("opNumber")} onSetValue={setValue} required={false} optional={true}/>
             {errors.opNumber ? <Errorset text={errors.opNumber.message}/> : null}
             <InputText name="wbsNumber" type="text" label="WBS-Number" register={register("wbsNumber")} onSetValue={setValue} required={false} optional={true}/>

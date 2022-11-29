@@ -67,8 +67,8 @@ const ProjectDetail: NextPage = ({}) => {
         router.push('/404');
     }else{
         if(data && data.ok && data.project !== null){
-            const {payType, opNumber, wbsNumber} = data?.project;
-            const joinText = [payType, opNumber, wbsNumber].filter((item)=> item !== undefined && item !== null && item !== "");
+            const {title, payType, opNumber, wbsNumber} = data?.project;
+            const joinText = [title, payType, opNumber, wbsNumber].filter((item)=> item !== undefined && item !== null && item !== "");
             setProjectInfo(joinText.join(" / "));
         }
     }

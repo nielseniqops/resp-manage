@@ -58,7 +58,7 @@ const AddProject: NextPage = ({}) => {
       }
     }, [user, projectData])
 
-  const onValid = async ({name, opNumber, wbsNumber, group, status, payType, deleteFlag}:ProjectWithDelete) => {
+  const onValid = async ({name, title, opNumber, wbsNumber, group, status, payType, deleteFlag}:ProjectWithDelete) => {
     if(loading) return;
     let errFlag = false;
     
@@ -73,13 +73,14 @@ const AddProject: NextPage = ({}) => {
     }
 
     if( errFlag ) return;
-    registerProject({name, opNumber, wbsNumber, group, status, payType, deleteFlag});
+    registerProject({name, title, opNumber, wbsNumber, group, status, payType, deleteFlag});
   }
 
   useEffect(()=>{
     if( projectData ){
-        const {name, payType, status, opNumber, wbsNumber, group} = projectData?.project;
+        const {name, title, payType, status, opNumber, wbsNumber, group} = projectData?.project;
         setValue("name", name);
+        setValue("title", title);
         setValue("opNumber", opNumber);
         setValue("wbsNumber", wbsNumber);
         setValue("group", group);
@@ -132,6 +133,8 @@ const AddProject: NextPage = ({}) => {
               <>
                 <InputText name="name" type="text" label="Project name" defaultValue={watch("name")} register={register("name")} onSetValue={setValue}/>
                 {errors.name ? <Errorset text={errors.name.message}/> : null}
+                <InputText name="title" type="text" label="Show title" defaultValue={watch("title")||""} register={register("title")} onSetValue={setValue} required={false} optional={true}/>
+                {errors.title ? <Errorset text={errors.title.message}/> : null}
                 <InputText name="opNumber" type="text" label="OP-Number" defaultValue={watch("opNumber")||""} register={register("opNumber")} onSetValue={setValue} required={false} optional={true}/>
                 {errors.opNumber ? <Errorset text={errors.opNumber.message}/> : null}
                 <InputText name="wbsNumber" type="text" label="WBS-Number" defaultValue={watch("wbsNumber")||""} register={register("wbsNumber")} onSetValue={setValue} required={false} optional={true}/>

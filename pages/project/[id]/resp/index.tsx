@@ -231,7 +231,7 @@ useEffect(()=>{
 }, [agreeItems]);
 
   return (
-    <Layout title={data?.project?.name} canGoBack={router.query.mode === "direct" ? true : false} seoTitle="Respdent | NielsenIQ OPS" goBackUrl={`/project/${router?.query?.id}`}>
+    <Layout title={data?.project?.title ? data?.project?.title : data?.project?.name} canGoBack={router.query.mode === "direct" ? true : false} seoTitle="Respdent | NielsenIQ OPS" goBackUrl={`/project/${router?.query?.id}`}>
         {data && data.project.status === "Active" ? 
             !agreement ? (<div className="animate__animated animate__fadeInDown">
                             <Agreement />

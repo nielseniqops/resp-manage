@@ -5,7 +5,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 
 async function handler(req:NextApiRequest, res:NextApiResponse<ResponseType>){
     if( req.method === "POST" ){
-        const {query: {id}, body: {name, opNumber, wbsNumber, group, status, payType, deleteFlag}} = req;
+        const {query: {id}, body: {name, title, opNumber, wbsNumber, group, status, payType, deleteFlag}} = req;
         
         if( id !== undefined ){
             if( deleteFlag ){
@@ -25,6 +25,7 @@ async function handler(req:NextApiRequest, res:NextApiResponse<ResponseType>){
                     },
                     data: {
                         name,
+                        title : (title !== "" && title !== undefined && title  !== null) ? title : null,
                         opNumber : (opNumber !== "" && opNumber !== undefined && opNumber  !== null) ? opNumber : null,
                         wbsNumber : (wbsNumber !== "" && wbsNumber !== undefined && wbsNumber  !== null) ? wbsNumber : null,
                         group : (group !== "" && group !== undefined && group  !== null) ? group : null,

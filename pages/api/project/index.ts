@@ -5,11 +5,12 @@ import { NextApiRequest, NextApiResponse } from "next";
 
 async function handler(req:NextApiRequest, res:NextApiResponse<ResponseType>){
     if( req.method === "POST" ){
-        const {body: {name, opNumber, wbsNumber, group, payType}, session: {user}} = req;
+        const {body: {name, title, opNumber, wbsNumber, group, payType}, session: {user}} = req;
         
         const project = await client.project.create({
             data: {
                 name,
+                title : (title !== "" && title !== undefined && title  !== null) ? title : null,
                 opNumber : (opNumber !== "" && opNumber !== undefined && opNumber  !== null) ? opNumber : null,
                 wbsNumber : (wbsNumber !== "" && wbsNumber !== undefined && wbsNumber  !== null) ? wbsNumber : null,
                 group : (group !== "" && group !== undefined && group  !== null) ? group : null,
