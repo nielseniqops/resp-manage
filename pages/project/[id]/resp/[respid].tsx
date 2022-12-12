@@ -236,7 +236,7 @@ const AddResp: NextPage = ({}) => {
   }, [user, data])
 
   return (
-    <Layout title={data && data.ok ? `${data?.project?.name} - 응답 수정` : ""} canGoBack={true} seoTitle="Respdent | NielsenIQ OPS" goBackUrl={`/project/${router?.query?.id}`}>
+    <Layout title={data && data.ok ? `응답 수정` : ""} canGoBack={true} seoTitle="Respdent | NielsenIQ OPS" goBackUrl={`/project/${router?.query?.id}`}>
         {respDataLoading ? (
                 <div className="flex flex-row items-center justify-center w-full px-5 pb-10 mt-8">
                     <Skeleton width={70} height={70} circle/>
