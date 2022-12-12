@@ -70,7 +70,7 @@ export default function Layout({
                 </svg>
               </button>
             ) : null}
-          <div className={cls("w-full text-center text-gray-600", canGoBack ? "pr-8" : "")}>
+          <div className={cls("w-full text-center text-gray-600 truncate", canGoBack ? "pr-8" : "")}>
             {title ? (
               <span className={cls(canGoBack ? "mx-auto" : "", "")}>{title}</span>
             ) : null}
