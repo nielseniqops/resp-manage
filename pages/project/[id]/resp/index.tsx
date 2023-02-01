@@ -107,7 +107,7 @@ const formChange = () => {
     const payChk = (watch("pay") !== undefined && watch("pay") !== "") ? true : false;
     const otherProjectAgreeChk = (watch("otherProjectAgree") !== undefined && watch("otherProjectAgree") !== null) ? true : false;
     
-    if( nameChk && phoneChk && birthChk && addressChk && sighChk && bankChk && payChk && otherProjectAgreeChk){
+    if( nameChk && phoneChk && birthChk && addressChk && sighChk && bankChk && otherProjectAgreeChk){
         setSubmitBtn(true);
     }else{
         setSubmitBtn(false);
@@ -145,8 +145,8 @@ const formChange = () => {
         errFlag = true;
     }
     if( pay === "" || pay === undefined || pay === null ){
-        setError("pay", {message: "필수 입력"});
-        errFlag = true;
+        //setError("pay", {message: "필수 입력"});
+        //errFlag = true;
     }
     
     if( otherProjectAgree === undefined || otherProjectAgree === null){
