@@ -268,7 +268,7 @@ const ProjectDetail: NextPage = ({}) => {
                             ) : (
                                 <div className="flex flex-row justify-end gap-2">
                                     <div 
-                                        className="cursor-pointer w-[7rem] flex flex-row items-center justify-end gap-2 px-5 text-xs text-center transition-all bg-[#dde7fc] rounded-md shadow-md hover:bg-[#dde7fc] p-[0.8px]"
+                                        className="cursor-pointer w-[7rem] flex flex-row items-center justify-end gap-2 px-5 text-xs text-center transition-all bg-[#dde7fc] rounded-md shadow-md hover:bg-[#2d6df6] hover:text-white p-[0.8px]"
                                         onClick={()=>{setDownLoading(true); downLoadExcel(respData?.respondent); setShowDownload(true); }}>
                                         Excel
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -276,7 +276,7 @@ const ProjectDetail: NextPage = ({}) => {
                                         </svg>
                                     </div>
                                     <div 
-                                        className="cursor-pointer w-[7rem] flex flex-row items-center justify-end gap-2 px-5 text-xs text-center transition-all bg-[#dde7fc] rounded-md shadow-md hover:bg-[#dde7fc] p-[0.8px]"
+                                        className="cursor-pointer w-[7rem] flex flex-row items-center justify-end gap-2 px-5 text-xs text-center transition-all bg-[#dde7fc] rounded-md shadow-md hover:bg-[#2d6df6] hover:text-white p-[0.8px]"
                                         onClick={()=>{setDownLoading(true);signZip();setShowDownload(true);}}>
                                         Sign
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
