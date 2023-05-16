@@ -126,7 +126,7 @@ const UserModified: NextPage = () => {
                 <div className="flex justify-end w-full text-xs">
                     <div 
                         onClick={()=>{setPwChange(!pwChange)}}
-                        className="p-1 px-2 text-white transition-colors bg-black rounded-md shadow-md cursor-pointer hover:bg-green-400 hover:text-black">
+                        className="p-1 px-2 text-black transition-colors bg-[#b7ceff] rounded-md shadow-md cursor-pointer hover:bg-[#2d6df6] hover:text-white">
                         {pwChange ? "Cancle" : (user?.id === Number(router.query.id)) ? "Password Change" : "Password reset"}
                     </div>
                 </div>

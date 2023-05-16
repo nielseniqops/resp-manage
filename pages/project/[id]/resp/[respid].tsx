@@ -373,7 +373,7 @@ const AddResp: NextPage = ({}) => {
                                             </svg>
                                             계좌
                                         </div>
-                                        <div className="px-1 py-[0.7px] border-[1px] cursor-pointer border-gray-500 text-center rounded-md shadow-md hover:bg-green-400 transition-all" onClick={()=>{settodayPayChk(!todayPayChk)}}>
+                                        <div className="px-1 py-[0.7px] border-[1px] cursor-pointer border-gray-500 text-center rounded-md shadow-md hover:bg-[#2d6df6] hover:border-[#2d6df6] hover:text-white transition-all" onClick={()=>{settodayPayChk(!todayPayChk)}}>
                                             {todayPayChk ? "계좌 지급" : "현금 지급"}
                                         </div>
                                     </div>
@@ -418,8 +418,8 @@ const AddResp: NextPage = ({}) => {
                                     ) : null }
                                 </div>
                                 <div className="flex flex-row items-center justify-center w-full">
-                                    <div className="w-full sm:w-[60%] mt-2">
-                                        <input type="button" defaultValue={!openPostcode ? "검 색" : "닫 기"} onClick={postHandle.clickButton} className="w-full border-[1px] border-gray-500 text-center rounded-md shadow-md hover:bg-green-400 transition-all"/>
+                                    <div className="w-full sm:w-[60%] mt-2 cursor-pointer">
+                                        <input type="button" defaultValue={!openPostcode ? "검 색" : "닫 기"} onClick={postHandle.clickButton} className="w-full border-[1px] border-gray-500 text-center rounded-md shadow-md hover:bg-[#2d6df6] hover:border-[#2d6df6] hover:text-white transition-all cursor-pointer outline-none ring-0 focus:ring-1 focus:ring-[#2d6df6]"/>
                                     </div>
                                 </div>
                                 {/* 주소 API 사용 */}
@@ -459,11 +459,11 @@ const AddResp: NextPage = ({}) => {
                                     <div className="flex flex-row gap-5 justify-between mt-5 m-auto w-[80%] sm:w-[50%]">
                                         <div
                                             onClick={()=>{setValue("otherProjectAgree", true);}} 
-                                            className={cls("w-32 pt-2 pb-2 text-sm text-center text-white transition-colors bg-black rounded-md shadow-md cursor-pointer hover:bg-green-400 hover:text-black", watch("otherProjectAgree") === true ? "bg-green-400 text-black" : "")}>
+                                            className={cls("w-32 pt-2 pb-2 text-sm text-center transition-colors rounded-md shadow-md cursor-pointer hover:bg-[#2d6df6] hover:text-white border-[1px] hover:border-[#2d6df6]", watch("otherProjectAgree") === true ? "bg-[#2d6df6] text-white border-[#2d6df6]" : "text-gray-700 border-gray-500")}>
                                             동의함</div>
                                         <div 
                                             onClick={()=>{setValue("otherProjectAgree", false);}} 
-                                            className={cls("w-32 pt-2 pb-2 text-sm text-center text-white transition-colors bg-black rounded-md shadow-md cursor-pointer hover:bg-green-400 hover:text-black", watch("otherProjectAgree") === false ? "bg-green-400 text-black" : "")}>
+                                            className={cls("w-32 pt-2 pb-2 text-sm text-center transition-colors rounded-md shadow-md cursor-pointer hover:bg-[#2d6df6] hover:text-white border-[1px] hover:border-[#2d6df6]", watch("otherProjectAgree") === false ? "bg-[#2d6df6] text-white border-[#2d6df6]" : "text-gray-700 border-gray-500")}>
                                             동의하지 않음</div>
                                 </div>
 

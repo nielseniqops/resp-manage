@@ -10,7 +10,7 @@ const QRanswer: NextPage = () => {
                 <title>Complete</title>
             </Head>
             <div className="w-full">
-                <div className="relative py-20 mt-20 overflow-hidden text-green-400 bg-white rounded-md shadow-md animate__animated animate__bounceIn">
+                <div className="relative py-20 mt-20 overflow-hidden text-[#2d6df6] bg-white rounded-md shadow-md animate__animated animate__bounceIn">
                     <div className="flex flex-col items-center justify-center">
                         <div className="text-2xl font-bold">입력이 완료 되었습니다!</div>
                         <div className="mt-12">
@@ -19,7 +19,7 @@ const QRanswer: NextPage = () => {
                             </svg>
                         </div>
                     </div>
-                    <div className="absolute w-40 -rotate-45 border-t-8 border-green-400 shadow-md -left-12 top-12"></div>
+                    <div className="absolute w-40 -rotate-45 border-t-8 border-[#2d6df6] shadow-md -left-12 top-12"></div>
                 </div>
             </div>
         </>

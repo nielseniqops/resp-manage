@@ -49,16 +49,16 @@ const ProjectDetail: NextPage = ({}) => {
                     <QRCodeCanvas
                         value={QRCodeValue}
                         size={250}
-                        fgColor="rgb(74 222 128)"
+                        fgColor="rgb(45 109 246)"
                     />
                 </div>
-                <div className="w-[300px] qrcode-scan absolute h-1 bg-green-400 shadow-green-800 shadow-md"></div>
-                <div className="absolute w-20 h-20 border-t-8 border-l-8 qrcode-camera -top-4 left-2 sm:left-28 border-t-green-400 border-l-green-400"></div>
-                <div className="absolute w-20 h-20 rotate-90 border-t-8 border-l-8 qrcode-camera -top-4 right-2 sm:right-28 border-t-green-400 border-l-green-400"></div>
-                <div className="absolute w-20 h-20 rotate-180 border-t-8 border-l-8 qrcode-camera -bottom-14 right-2 sm:right-28 border-t-green-400 border-l-green-400"></div>
-                <div className="absolute w-20 h-20 -rotate-90 border-t-8 border-l-8 qrcode-camera -bottom-14 left-2 sm:left-28 border-t-green-400 border-l-green-400"></div>
+                <div className="w-[300px] qrcode-scan absolute h-1 bg-[#2d6df6] shadow-[#2d6df6] shadow-md"></div>
+                <div className="absolute w-20 h-20 border-t-8 border-l-8 qrcode-camera -top-4 left-2 sm:left-28 border-t-[#2d6df6] border-l-[#2d6df6]"></div>
+                <div className="absolute w-20 h-20 rotate-90 border-t-8 border-l-8 qrcode-camera -top-4 right-2 sm:right-28 border-t-[#2d6df6] border-l-[#2d6df6]"></div>
+                <div className="absolute w-20 h-20 rotate-180 border-t-8 border-l-8 qrcode-camera -bottom-14 right-2 sm:right-28 border-t-[#2d6df6] border-l-[#2d6df6]"></div>
+                <div className="absolute w-20 h-20 -rotate-90 border-t-8 border-l-8 qrcode-camera -bottom-14 left-2 sm:left-28 border-t-[#2d6df6] border-l-[#2d6df6]"></div>
             </div>
-            <div className="py-2 mt-20 text-2xl font-bold text-center text-green-400 filter qrcode-camera">
+            <div className="py-2 mt-20 text-2xl font-bold text-center text-[#2d6df6] filter qrcode-camera">
                 QR CODE SCAN
             </div>
         </div>

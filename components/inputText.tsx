@@ -52,8 +52,8 @@ export default function InputText({
                 onBlur={register.onBlur}
                 defaultValue={defaultValue}
                 onChange={(e)=>{register.onChange(e);requiredOnchange(e);}}
-                className={cls("w-full border-gray-700 rounded-md shadow-md focus:outline-none focus:ring-green-400 focus:border-green-400 peer", requiredBool ? "outline-none ring-green-400 border-green-400" : "")}/>
-            <span className={cls("absolute pointer-events-none transition-all ease-in select-none left-2 pt-2 text-center peer-focus:text-[12px] peer-focus:px-2 peer-focus:pt-0 peer-focus:-top-[0.6rem] peer-focus:bg-green-400 peer-focus:text-black peer-focus:rounded-sm", requiredBool ? "text-[12px] px-2 pt-0 -top-[0.6rem] bg-green-400 text-black rounded-sm" : "text-gray-400")}>{label}</span>
+                className={cls("w-full border-gray-700 rounded-md shadow-md focus:outline-none focus:ring-[#2d6df6] focus:border-[#2d6df6] peer", requiredBool ? "outline-none ring-[#2d6df6] border-[#2d6df6]" : "")}/>
+            <span className={cls("absolute pointer-events-none transition-all ease-in select-none left-2 pt-2 text-center peer-focus:text-[12px] peer-focus:px-2 peer-focus:pt-0 peer-focus:-top-[0.6rem] peer-focus:bg-[#2d6df6] peer-focus:text-white peer-focus:rounded-sm", requiredBool ? "text-[12px] px-2 pt-0 -top-[0.6rem] bg-[#2d6df6] text-white rounded-sm" : "text-gray-400")}>{label}</span>
             {optional ? (<span className="absolute top-[-45%] right-0 text-xs text-red-500 font-thin italic">* optional</span>) : null}
         </div>
     );

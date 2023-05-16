@@ -163,7 +163,7 @@ const ProjectDetail: NextPage = ({}) => {
             </>
         ) : null }
         <div className="flex flex-row items-center justify-between w-full px-5 pb-5 mt-2">
-            <div className="text-lg text-gray-600">
+            <div className="text-lg text-black">
                 <div className="w-full">
                     {data ? (<div>{data?.project?.name}{data?.project?.group !== null ? (<span className="text-[0.5rem] text-gray-500"> (Group {data?.project?.group})</span>) : null}</div>) : <Skeleton width={200} count={1}/>}
                 </div>
@@ -180,13 +180,13 @@ const ProjectDetail: NextPage = ({}) => {
         </div>
         { router.query.id && user?.permission && ["FULL", "EDIT"].includes(user.permission) ? 
             data ? (<div className="w-full px-2 pl-3 mb-2 text-sm">
-                <div className="flex flex-row items-center text-gray-600 text-md">
+                <div className="flex flex-row items-center text-black text-md">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m3.75 9v6m3-3H9m1.5-12H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
                     </svg>
                     Input link
                     <Link href={`/project/${router.query.id}/qrcode`} target="_blank">
-                        <a target="_blank" className="flex flex-col items-center justify-center w-12 py-1 ml-2 text-sm transition-all bg-green-300 rounded-md shadow-md cursor-pointer hover:bg-green-400">
+                        <a target="_blank" className="flex flex-col items-center justify-center w-12 py-1 ml-2 text-sm transition-all bg-[#dde7fc] rounded-md shadow-md cursor-pointer hover:bg-[#2d6df6] hover:text-white">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 013.75 9.375v-4.5zM3.75 14.625c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5a1.125 1.125 0 01-1.125-1.125v-4.5zM13.5 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 0113.5 9.375v-4.5z" />
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 6.75h.75v.75h-.75v-.75zM6.75 16.5h.75v.75h-.75v-.75zM16.5 6.75h.75v.75h-.75v-.75zM13.5 13.5h.75v.75h-.75v-.75zM13.5 19.5h.75v.75h-.75v-.75zM19.5 13.5h.75v.75h-.75v-.75zM19.5 19.5h.75v.75h-.75v-.75zM16.5 16.5h.75v.75h-.75v-.75z" />
@@ -197,7 +197,7 @@ const ProjectDetail: NextPage = ({}) => {
                 <div className="flex flex-col gap-1 pl-1 mt-2">
                     <div onClick={()=>{
                         handleCopyClipBoard(inputURL, setUrlCopy);
-                    }} className="flex flex-col items-center justify-center w-12 text-xs transition-all bg-green-300 rounded-md shadow-md cursor-pointer hover:bg-green-400">
+                    }} className="flex flex-col items-center justify-center w-12 text-xs transition-all bg-[#dde7fc] rounded-md shadow-md cursor-pointer hover:bg-[#2d6df6] hover:text-white">
                         {urlCopy ? (
                             <>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 animate__animated animate__bounceIn">                                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -214,7 +214,7 @@ const ProjectDetail: NextPage = ({}) => {
                 <div className="flex flex-col gap-1 pl-1 mt-2">
                     <div onClick={()=>{
                         handleCopyClipBoard(onceURL, setOnceUrlCopy);
-                    }} className="flex flex-col items-center justify-center w-12 text-xs transition-all bg-green-300 rounded-md shadow-md cursor-pointer hover:bg-green-400">
+                    }} className="flex flex-col items-center justify-center w-12 text-xs transition-all bg-[#dde7fc] rounded-md shadow-md cursor-pointer hover:bg-[#2d6df6] hover:text-white">
                         {onceUrlCopy ? (
                             <>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 animate__animated animate__bounceIn">                                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -247,7 +247,7 @@ const ProjectDetail: NextPage = ({}) => {
                 { user?.permission && ["FULL", "EDIT"].includes(user.permission) ? (
                     <>
                         <Link href={`/project/${router.query.id}/modify`}>
-                            <a className="w-[7rem] flex flex-row items-center justify-end gap-2 px-3 text-xs text-center transition-all bg-green-300 rounded-md shadow-md hover:bg-green-400 p-[0.8px]">
+                            <a className="w-[7rem] flex flex-row items-center justify-end gap-2 px-3 text-xs text-center transition-all bg-[#dde7fc] rounded-md shadow-md hover:bg-[#2d6df6] hover:text-white p-[0.8px]">
                                 Modify
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75a4.5 4.5 0 01-4.884 4.484c-1.076-.091-2.264.071-2.95.904l-7.152 8.684a2.548 2.548 0 11-3.586-3.586l8.684-7.152c.833-.686.995-1.874.904-2.95a4.5 4.5 0 016.336-4.486l-3.276 3.276a3.004 3.004 0 002.25 2.25l3.276-3.276c.256.565.398 1.192.398 1.852z" />
@@ -259,7 +259,7 @@ const ProjectDetail: NextPage = ({}) => {
                             showDownload ? (
                             <div 
                                 onClick={()=>{setShowDownload(false)}}
-                                className="cursor-pointer w-[7rem] flex flex-row items-center justify-end gap-2 px-3 text-xs text-center transition-color bg-green-300 rounded-md shadow-md hover:bg-green-400 p-[0.8px]">
+                                className="cursor-pointer w-[7rem] flex flex-row items-center justify-end gap-2 px-3 text-xs text-center transition-color bg-[#dde7fc] rounded-md shadow-md hover:bg-[#2d6df6] hover:text-white p-[0.8px]">
                                 Download
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 13.5l3 3m0 0l3-3m-3 3v-6m1.06-4.19l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
@@ -268,7 +268,7 @@ const ProjectDetail: NextPage = ({}) => {
                             ) : (
                                 <div className="flex flex-row justify-end gap-2">
                                     <div 
-                                        className="cursor-pointer w-[7rem] flex flex-row items-center justify-end gap-2 px-5 text-xs text-center transition-all bg-green-300 rounded-md shadow-md hover:bg-green-400 p-[0.8px]"
+                                        className="cursor-pointer w-[7rem] flex flex-row items-center justify-end gap-2 px-5 text-xs text-center transition-all bg-[#dde7fc] rounded-md shadow-md hover:bg-[#dde7fc] p-[0.8px]"
                                         onClick={()=>{setDownLoading(true); downLoadExcel(respData?.respondent); setShowDownload(true); }}>
                                         Excel
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -276,7 +276,7 @@ const ProjectDetail: NextPage = ({}) => {
                                         </svg>
                                     </div>
                                     <div 
-                                        className="cursor-pointer w-[7rem] flex flex-row items-center justify-end gap-2 px-5 text-xs text-center transition-all bg-green-300 rounded-md shadow-md hover:bg-green-400 p-[0.8px]"
+                                        className="cursor-pointer w-[7rem] flex flex-row items-center justify-end gap-2 px-5 text-xs text-center transition-all bg-[#dde7fc] rounded-md shadow-md hover:bg-[#dde7fc] p-[0.8px]"
                                         onClick={()=>{setDownLoading(true);signZip();setShowDownload(true);}}>
                                         Sign
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -297,7 +297,7 @@ const ProjectDetail: NextPage = ({}) => {
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 15.75l-2.489-2.489m0 0a3.375 3.375 0 10-4.773-4.773 3.375 3.375 0 004.774 4.774zM21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                    <input type="text" className="h-8 m-1 text-sm border-gray-700 rounded-md shadow-md focus:outline-none focus:ring-green-400 focus:border-green-400" placeholder="search" onChange={(e)=>{setSearchText(e.target.value);}}/>
+                    <input type="text" className="h-8 m-1 text-sm border-gray-700 rounded-md shadow-md focus:outline-none focus:ring-[#2d6df6] focus:border-[#2d6df6]" placeholder="search" onChange={(e)=>{setSearchText(e.target.value);}}/>
                 </div>
                 )
                 : null
@@ -312,12 +312,12 @@ const ProjectDetail: NextPage = ({}) => {
                         (
                         <>
                             <table className="relative w-full shadow-md table-fixed">
-                                <thead className="text-sm text-gray-600 border-b-2 shadow-md">
+                                <thead className="text-sm text-black border-b-2 shadow-md">
                                     <tr>
-                                        <th className="sticky top-0 w-20 py-2 bg-green-400">name</th>
-                                        <th className="sticky top-0 py-2 bg-green-400">phone</th>
-                                        <th className="sticky top-0 py-2 bg-green-400">birthday</th>
-                                        <th className="sticky top-0 py-2 bg-green-400">createdAt</th>
+                                        <th className="sticky top-0 w-20 py-2 bg-[#2d6df6] text-white">name</th>
+                                        <th className="sticky top-0 py-2 bg-[#2d6df6] text-white">phone</th>
+                                        <th className="sticky top-0 py-2 bg-[#2d6df6] text-white">birthday</th>
+                                        <th className="sticky top-0 py-2 bg-[#2d6df6] text-white">createdAt</th>
                                     </tr>
                                 </thead>
                                 <tbody className="text-sm text-center">
@@ -325,7 +325,7 @@ const ProjectDetail: NextPage = ({}) => {
                                         const phoneMutation = user?.permission && ["FULL", "EDIT"].includes(user.permission) ? resp?.phone : resp?.phone.substring(0, 7) + "****" ;
                                         if( resp.name.includes(searchText) || phoneMutation.includes(searchText.replace("*", "")) || resp.birthday.includes(searchText) ){
                                             return (
-                                                <tr className="text-xs text-gray-600 shadow-sm odd:bg-white even:bg-gray-200 hover:bg-green-300" key={resp?.id}>
+                                                <tr className="text-xs text-black shadow-sm odd:bg-white even:bg-gray-200 hover:bg-[#dde7fc]" key={resp?.id}>
                                                     <td className="h-8 px-1 py-1">
                                                         { user?.permission && ["FULL", "EDIT"].includes(user.permission) ? (
                                                         <Link href={`/project/${router.query.id}/resp/${resp?.id}`}>

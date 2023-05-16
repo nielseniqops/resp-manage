@@ -31,7 +31,7 @@ const User: NextPage = ({}) => {
   const [ searchText, setSearchText ] = useState<string>("");
   return (
     <Layout title="User" seoTitle="User | NielsenIQ OPS" hasTabBar={true}>
-        <div className="flex flex-col justify-center w-full gap-3 pl-3 mt-1 text-gray-600">
+        <div className="flex flex-col justify-center w-full gap-3 pl-3 mt-1 text-black">
             <div className="flex flex-row items-center gap-2 mb-3 text-lg font-bold -ml-[0.1rem]">
                 { isLoading ? (
                     <div>
@@ -44,7 +44,7 @@ const User: NextPage = ({}) => {
                     </svg>
                     User Information
                     <Link href={`/user/${user?.id}`}>
-                        <a className="p-1 px-2 text-sm font-normal text-white transition-colors bg-black rounded-md shadow-md hover:bg-green-400 hover:text-black">
+                        <a className="p-1 px-2 text-sm font-normal text-black transition-colors bg-[#b7ceff] rounded-md shadow-md hover:bg-[#2d6df6] hover:text-white">
                             EDIT
                         </a>
                     </Link>
@@ -109,7 +109,7 @@ const User: NextPage = ({}) => {
             </div>
         </div>
         <div className="border-t-[1px] border-gray-300 mt-5">
-            <div className="flex flex-row items-center gap-2 mt-3 ml-3 text-lg font-bold text-gray-600">
+            <div className="flex flex-row items-center gap-2 mt-3 ml-3 text-lg font-bold text-black">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
                 </svg>
@@ -125,11 +125,11 @@ const User: NextPage = ({}) => {
                     (
                         <div className="flex-grow h-screen pb-10">
                             <div className="mb-2 ml-1">
-                                <div className="flex flex-row items-center w-full mt-1 ml-2 text-gray-600">
+                                <div className="flex flex-row items-center w-full mt-1 ml-2 text-black">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 15.75l-2.489-2.489m0 0a3.375 3.375 0 10-4.773-4.773 3.375 3.375 0 004.774 4.774zM21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
-                                    <input type="text" className="h-8 m-1 text-sm border-gray-700 rounded-md shadow-md focus:outline-none focus:ring-green-400 focus:border-green-400" placeholder="search" {...register("search", {
+                                    <input type="text" className="h-8 m-1 text-sm border-gray-700 rounded-md shadow-md focus:outline-none focus:ring-[#2d6df6] focus:border-[#2d6df6]" placeholder="search" {...register("search", {
                                         onChange: (e)=>{
                                             setSearchText(e.target.value);
                                         }
@@ -138,19 +138,19 @@ const User: NextPage = ({}) => {
                             </div>
                             <div className="overflow-y-scroll h-[30%] sm:h-[45%]">
                                 <table className="relative w-full shadow-md sm:table-fixed">
-                                        <thead className="text-sm text-gray-600 border-b-2 shadow-md">
+                                        <thead className="text-sm text-black border-b-2 shadow-md">
                                             <tr>
-                                                <th className="sticky top-0 py-2 bg-green-400">email</th>
-                                                <th className="sticky top-0 py-2 bg-green-400">name</th>
-                                                <th className="sticky top-0 py-2 bg-green-400">phone</th>
-                                                <th className="sticky top-0 py-2 bg-green-400">level</th>
+                                                <th className="sticky top-0 py-2 bg-[#2d6df6] text-white">email</th>
+                                                <th className="sticky top-0 py-2 bg-[#2d6df6] text-white">name</th>
+                                                <th className="sticky top-0 py-2 bg-[#2d6df6] text-white">phone</th>
+                                                <th className="sticky top-0 py-2 bg-[#2d6df6] text-white">level</th>
                                             </tr>
                                         </thead>
                                         <tbody className="text-sm text-center">
                                             { data?.users.map( (u) => {
                                                 if( user.id !== u.id && (u.name.includes(searchText) || (u.phone && u.phone.includes(searchText) || u.email.includes(searchText)) )){
                                                     return (
-                                                        <tr className="text-xs text-gray-600 shadow-sm odd:bg-white even:bg-gray-200 hover:bg-green-300" key={u.id}>
+                                                        <tr className="text-xs text-black shadow-sm odd:bg-white even:bg-gray-200 hover:bg-[#dde7fc]" key={u.id}>
                                                             <td className="h-8 px-1 py-1">
                                                                 <Link href={`/user/${u.id}`}>
                                                                     <a className="text-blue-500 transition-all hover:text-blue-700">

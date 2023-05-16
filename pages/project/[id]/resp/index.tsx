@@ -238,7 +238,7 @@ useEffect(()=>{
                             <div className="flex flex-col items-center pb-5 mt-5">
                                 <div 
                                     onClick={()=>{setAgreement(true); window.scrollTo(0, 0);}}
-                                    className="w-32 py-1 text-sm text-center text-white transition-colors bg-black rounded-md shadow-md cursor-pointer hover:bg-green-400 hover:text-black">
+                                    className="w-32 py-1 text-sm text-center text-black transition-colors border-[1px] border-gray-500 rounded-md shadow-md cursor-pointer hover:bg-[#2d6df6] hover:border-[#2d6df6] hover:text-white">
                                     확 인
                                 </div>
                             </div>
@@ -380,8 +380,8 @@ useEffect(()=>{
                         ) : null }
                     </div>
                     <div className="flex flex-row items-center justify-center w-full">
-                        <div className="w-full sm:w-[60%] mt-2">
-                            <input type="button" defaultValue={!openPostcode ? "검 색" : "닫 기"} onClick={postHandle.clickButton} className="w-full border-[1px] border-gray-500 text-center rounded-md shadow-md hover:bg-green-400 transition-all"/>
+                        <div className="w-full sm:w-[60%] mt-2 cursor-pointer">
+                            <input type="button" defaultValue={!openPostcode ? "검 색" : "닫 기"} onClick={postHandle.clickButton} className="w-full border-[1px] border-gray-500 text-center rounded-md shadow-md hover:bg-[#2d6df6] hover:text-white transition-all cursor-pointer outline-none ring-0 focus:ring-1 focus:ring-[#2d6df6]"/>
                         </div>
                     </div>
                     {/* 주소 API 사용 */}
@@ -420,11 +420,11 @@ useEffect(()=>{
                     <div className="flex flex-row gap-5 justify-between mt-5 m-auto w-[80%] sm:w-[50%]">
                         <div
                             onClick={()=>{setValue("otherProjectAgree", true);}} 
-                            className={cls("w-32 pt-2 pb-2 text-sm text-center text-white transition-colors bg-black rounded-md shadow-md cursor-pointer hover:bg-green-400 hover:text-black", watch("otherProjectAgree") === true ? "bg-green-400 text-black" : "")}>
+                            className={cls("w-32 pt-2 pb-2 text-sm text-center transition-colors rounded-md shadow-md cursor-pointer hover:bg-[#2d6df6] hover:text-white border-[1px] hover:border-[#2d6df6]", watch("otherProjectAgree") === true ? "bg-[#2d6df6] text-white border-[#2d6df6]" : "text-gray-700 border-gray-500")}>
                             동의함</div>
                         <div 
                             onClick={()=>{setValue("otherProjectAgree", false);}} 
-                            className={cls("w-32 pt-2 pb-2 text-sm text-center text-white transition-colors bg-black rounded-md shadow-md cursor-pointer hover:bg-green-400 hover:text-black", watch("otherProjectAgree") === false ? "bg-green-400 text-black" : "")}>
+                            className={cls("w-32 pt-2 pb-2 text-sm text-center transition-colors rounded-md shadow-md cursor-pointer hover:bg-[#2d6df6] hover:text-white border-[1px] hover:border-[#2d6df6]", watch("otherProjectAgree") === false ? "bg-[#2d6df6] text-white border-[#2d6df6]" : "text-gray-700 border-gray-500")}>
                             동의하지 않음</div>
                     </div>
 
@@ -448,7 +448,7 @@ useEffect(()=>{
                                 canvasProps={{
                                     width: 300,
                                     height: 170,
-                                    className: "border-[1.5px] border-gray-700 rounded-md shadow-md hover:border-green-400",
+                                    className: "border-[1.5px] border-gray-700 rounded-md shadow-md hover:border-[#2d6df6]",
                                 }}
                             />
                         </div>
@@ -469,16 +469,16 @@ useEffect(()=>{
                 </div>) 
                 : (<div className={cls("relative px-5 pb-10", goodJob ? "pointer-events-none" : "")}>
                         <div 
-                            className={cls("z-[100] w-full flex flex-row justify-center fixed left-5 top-[45%] text-green-400 -ml-5 pointer-events-none overflow-hidden touch-none", goodJob ? "" : "hidden")}>
+                            className={cls("z-[100] w-full flex flex-row justify-center fixed left-5 top-[45%] text-[#2d6df6] -ml-5 pointer-events-none overflow-hidden touch-none", goodJob ? "" : "hidden")}>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={cls("w-28 h-28 p-3 bg-white rounded-full", goodJob ? "animate__animatied animate__bounceIn" : "hidden")}>
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75A2.25 2.25 0 0116.5 4.5c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 01-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 00-1.423-.23H5.904M14.25 9h2.25M5.904 18.75c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 01-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 10.203 4.167 9.75 5 9.75h1.053c.472 0 .745.556.5.96a8.958 8.958 0 00-1.302 4.665c0 1.194.232 2.333.654 3.375z" />
                             </svg>
                         </div>
                         <div className={cls("w-full transition-all", goodJob ? "opacity-50" : "")}>
-                            <div className="flex flex-row items-center gap-1 mb-5 text-lg text-gray-600">
+                            <div className="flex flex-row items-center gap-1 mb-5 text-lg text-black">
                             <div className="w-full font-bold text-center text-gray-700 text-md">보안규정 준수서약</div>
                             </div>
-                            <div className="flex flex-col gap-2 text-sm font-bold text-gray-600">
+                            <div className="flex flex-col gap-2 text-sm font-bold text-black">
                                 <div>본인은 다음과 같은 사항을 준수할 것을 서약합니다.</div>
                                 <div>아래 4가지 사항을 확인하면서 각각 클릭 하신 뒤 진행해 주십시오.</div>
                             </div>
@@ -490,8 +490,8 @@ useEffect(()=>{
                                             curr.check = !curr.check;
                                             setAgreeItems([...agreeItems]);
                                         }}
-                                        className={cls("flex text-sm flex-col gap-1 p-2 mt-3 text-gray-600 transition-all rounded-md cursor-pointer hover:bg-green-200 hover:shadow-md", item.check ? "text-green-500" : "")}>
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={cls("-ml-1 w-6 h-6 text-red-400", item.check ? "text-green-500 animate__animated animate__bounceIn" : "text-gray-400")}>
+                                        className={cls("flex text-sm flex-col gap-1 p-2 mt-3 text-black transition-all rounded-md cursor-pointer hover:bg-[#b7ceff] hover:shadow-md", item.check ? "text-[#2d6df6]" : "")}>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={cls("-ml-1 w-6 h-6 text-red-400", item.check ? "text-[#2d6df6] animate__animated animate__bounceIn" : "text-gray-400")}>
                                                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                         </svg>
                                         <div>

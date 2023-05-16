@@ -14,16 +14,16 @@ const InputComplete: NextPage = ({}) => {
         { data && data.project.status === "Active" ? (
         <div className="w-full h-screen">
             <div className="flex flex-col gap-1 items-center justify-start mt-16 animate__animated animate__bounceIn">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12 text-red-400">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12 text-[#2d6df6]">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <div  className="text-red-400 text-2xl">
+                <div  className="text-[#2d6df6] text-2xl">
                     입력 완료
                 </div>
                 <div className="mt-10">
                     <div 
                         onClick={()=>{router.back()}}
-                        className="text-lg flex flex-row gap-3 items-center bg-black text-white w-32 justify-center py-1 rounded-md shadow-md hover:bg-green-400 hover:text-black transition-colors">
+                        className="text-lg flex flex-row gap-3 items-center text-black w-32 justify-center py-1 rounded-md shadow-md hover:bg-[#2d6df6] hover:text-white transition-colors border-[1px] border-gray-700 hover:border-[#2d6df6] cursor-pointer">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
                         </svg>

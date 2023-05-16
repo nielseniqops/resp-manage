@@ -12,7 +12,7 @@ const ErrorPage: NextPage = () => {
     }
     return (
         <div className="w-full">
-            <div className="mt-20 text-gray-600">
+            <div className="mt-20 text-black">
                 <div className="flex flex-col items-center justify-center">
                     <div className="text-2xl font-bold animate__animated animate__wobble">Not found page</div>
                     <div className="animate__animated animate__wobble">
@@ -37,7 +37,7 @@ const ErrorPage: NextPage = () => {
                     ) : (
                         <div 
                             onClick={goHome}
-                            className="hidden p-1 px-2 mt-10 text-white transition-colors bg-black rounded-md shadow-md cursor-pointer hover:bg-green-400 hover:text-black">
+                            className="hidden p-1 px-2 mt-10 text-black transition-colors rounded-md shadow-md cursor-pointer hover:bg-[#2d6df6] hover:text-white">
                             Go home
                         </div>
                     )}

@@ -9,7 +9,7 @@ export default function Agreement(){
                 }`
             }</style>
             <div className="w-full mb-2 font-bold text-center text-gray-700 text-md">개인 정보 수집 및 이용 동의서</div>
-            <div className="px-4 text-xs text-gray-600 word-keep-all">
+            <div className="px-4 text-xs text-black word-keep-all">
                 <div>
                     닐슨아이큐서비스코리아 (이하 &#x201C;회사&#x201D;라 함)는 설문조사 참여자(이하 「참여자」로 약칭)의 개인정보를 중요시하며, 「정보통신망 이용촉진 및 정보보호 등에 관한 법률」(이하 「정보통신망법」 으로 약칭) 제27조의2 제2항에 따라 참여자 여러분의 개인정보를 보호하기 위하여 다음과 같이 개인정보를 수집 및 이용 하고자 합니다. 회사는 이 「정보통신망법」을 비롯하여 개인정보와 관련된 법령 상의 개인정보보호규정 및 방송통신위원회가 제정한 &quot;개인정보보호지침&quot;을 준수하고 있습니다.
                 </div>

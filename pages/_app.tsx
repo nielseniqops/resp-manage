@@ -13,8 +13,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         }}
     >
       <div className="w-full max-w-xl mx-auto">
-        <div className="fixed w-40 h-40 bg-green-400 left-[-5rem] top-[-5rem] rotate-45 hidden md:block transition-all"></div> 
-        <div className="fixed w-40 h-40 bg-green-400 right-[-5rem] bottom-[-5rem] rotate-45 hidden md:block transition-all"></div> 
+        <div className="fixed w-40 h-40 bg-[#2d6df6] left-[-5rem] top-[-5rem] rotate-45 hidden md:block transition-all"></div> 
+        <div className="fixed w-40 h-40 bg-[#2d6df6] right-[-5rem] bottom-[-5rem] rotate-45 hidden md:block transition-all"></div> 
         <Component {...pageProps} />
       </div>
       <Script 
