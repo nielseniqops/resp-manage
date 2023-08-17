@@ -35,7 +35,7 @@ const ProjectDetail: NextPage = ({}) => {
     setQRCodeValue(inputURL);
   }, [router])
   return (
-    <Layout title={`${data?.project?.title ? data?.project?.title : data?.project?.name} QRCode`} seoTitle="QRCode | NielsenIQ OPS">
+    <Layout title={`${data?.project?.title ? data?.project?.title : (data?.project?.name ? data?.project?.name : null)} QRCode`} seoTitle="QRCode | NielsenIQ OPS">
         <div className="h-full py-10">
             <div className="relative flex flex-col items-center h-full mt-10">
                 <div className="flex justify-center pt-10">
