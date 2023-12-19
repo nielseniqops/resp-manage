@@ -178,7 +178,7 @@ const Enter: NextPage = () => {
                             </>)
                             : null }
                         </form>
-                        <div className="text-xs text-center text-gray-500 mt-14">
+                        <div className="text-xs text-center text-gray-500 mt-14 hidden">
                             <div>Copyright ⓒ 2022 Chan.lee all right reserved.</div>
                             <div>Chan.lee@nielseniq.com</div>
                         </div>
