@@ -121,15 +121,15 @@ const ProjectDetail: NextPage = ({}) => {
     // setDownLoading(false);
 
     // Convert JSON to CSV
-    const csvContent = exportJson.reduce((csv, row) => {
-        const values = Object.values(row).map(value => 
-            typeof value === 'string' && value.includes(',') ? `"${value}"` : value
+    const csvContent: string = exportJson.reduce((csv: string, row: any) => {
+        const values = Object.values(row).map((value) =>
+            typeof value === "string" && value.includes(",") ? `"${value}"` : value
         );
-        csv += values.join(',') + '\n';
+        csv += values.join(",") + "\n";
         return csv;
-    }, Object.keys(exportJson[0]).join(',') + '\n'); // Add headers
+    }, Object.keys(exportJson[0]).join(",") + "\n"); // Add headers
 
-    const csvFileName = `${jsonData?.[0]?.project?.name}${jsonData?.[0]?.project?.group !== null ? `_Group${jsonData?.[0]?.project?.group}` : ""}_Respondents_Data.csv`;
+    const csvFileName: string = `${jsonData?.[0]?.project?.name}${jsonData?.[0]?.project?.group !== null ? `_Group${jsonData?.[0]?.project?.group}` : ""}_Respondents_Data.csv`;
 
     // Create and download CSV file
     const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
