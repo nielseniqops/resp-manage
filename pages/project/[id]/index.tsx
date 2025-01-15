@@ -131,8 +131,11 @@ const ProjectDetail: NextPage = ({}) => {
 
     const csvFileName: string = `${jsonData?.[0]?.project?.name}${jsonData?.[0]?.project?.group !== null ? `_Group${jsonData?.[0]?.project?.group}` : ""}_Respondents_Data.csv`;
 
+    // Add UTF-8 BOM to prevent encoding issues
+    const BOM = "\uFEFF"; // UTF-8 BOM
+    const blob = new Blob([BOM + csvContent], { type: "text/csv;charset=utf-8;" });
+
     // Create and download CSV file
-    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
     saveAs(blob, csvFileName);
     setDownLoading(false);
   }
