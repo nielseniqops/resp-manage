@@ -100,7 +100,7 @@ const ProjectDetail: NextPage = ({}) => {
             residentNumber : `'${item.residentNumber}`,
             payMathod : item.todayPay ? "Cash" : "Account transfer",
             bankName : item.bankName,
-            bankNumber : item.bankNumber,
+            bankNumber : `'${item.bankNumber}`,
             address: item.address,
             addressDetail : item.addressDetail,
             zoneCode : `'${item.zonecode}`,
