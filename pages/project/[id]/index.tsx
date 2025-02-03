@@ -109,35 +109,36 @@ const ProjectDetail: NextPage = ({}) => {
             createdAt: item.createdAt
         }
     });
+
+    /* Convert JSON to Excel */
+    const wb = XLSX.utils.book_new();
+    const workSheet = XLSX.utils.json_to_sheet(exportJson);
+    XLSX.utils.book_append_sheet(wb, workSheet, "Respondent");
+    const wbout = XLSX.write(wb, {bookType: "xls",  type: "binary"});
     
-    // const wb = XLSX.utils.book_new();
-    // const workSheet = XLSX.utils.json_to_sheet(exportJson);
-    // XLSX.utils.book_append_sheet(wb, workSheet, "Respondent");
-    // const wbout = XLSX.write(wb, {bookType: "xls",  type: "binary"});
-    
-    // const excelFileName = `${data?.project?.name}${data?.project?.group !== null ? `_Group${data?.project?.group}` : ""}_Respondents_Data.xls`;
+    const excelFileName = `${data?.project?.name}${data?.project?.group !== null ? `_Group${data?.project?.group}` : ""}_Respondents_Data.xls`;
 
-    // saveAs(new Blob([s2ab(wbout)],{type:"application/xls"}), excelFileName);
-    // setDownLoading(false);
-
-    // Convert JSON to CSV
-    const csvContent: string = exportJson.reduce((csv: string, row: any) => {
-        const values = Object.values(row).map((value) =>
-            typeof value === "string" && value.includes(",") ? `"${value}"` : value
-        );
-        csv += values.join(",") + "\n";
-        return csv;
-    }, Object.keys(exportJson[0]).join(",") + "\n"); // Add headers
-
-    const csvFileName: string = `${jsonData?.[0]?.project?.name}${jsonData?.[0]?.project?.group !== null ? `_Group${jsonData?.[0]?.project?.group}` : ""}_Respondents_Data.csv`;
-
-    // Add UTF-8 BOM to prevent encoding issues
-    const BOM = "\uFEFF"; // UTF-8 BOM
-    const blob = new Blob([BOM + csvContent], { type: "text/csv;charset=utf-8;" });
-
-    // Create and download CSV file
-    saveAs(blob, csvFileName);
+    saveAs(new Blob([s2ab(wbout)],{type:"application/xls"}), excelFileName);
     setDownLoading(false);
+
+    /* Convert JSON to CSV */
+    // const csvContent: string = exportJson.reduce((csv: string, row: any) => {
+    //     const values = Object.values(row).map((value) =>
+    //         typeof value === "string" && value.includes(",") ? `"${value}"` : value
+    //     );
+    //     csv += values.join(",") + "\n";
+    //     return csv;
+    // }, Object.keys(exportJson[0]).join(",") + "\n"); // Add headers
+
+    // const csvFileName: string = `${jsonData?.[0]?.project?.name}${jsonData?.[0]?.project?.group !== null ? `_Group${jsonData?.[0]?.project?.group}` : ""}_Respondents_Data.csv`;
+
+    // // Add UTF-8 BOM to prevent encoding issues
+    // const BOM = "\uFEFF"; // UTF-8 BOM
+    // const blob = new Blob([BOM + csvContent], { type: "text/csv;charset=utf-8;" });
+
+    // // Create and download CSV file
+    // saveAs(blob, csvFileName);
+    // setDownLoading(false);
   }
 
 
